@@ -3,13 +3,9 @@ services:
  - docker
 
 before_install:
- - echo "BEFORE INSTALL START"
- - gem install bundler
- - echo "BEFORE INSTALL END"
-
  - docker build -t sanjeev/docker-react -f Dockerfile.dev .
 
 script:
- - docker run sanjeev/decker-react npm run test -- --coverage
+ - docker run sanjeev/docker-react npm run test -- --coverage
 
 
